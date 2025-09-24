@@ -65,6 +65,11 @@
           "title": "license",
           "name": "license",
           "type": "string"
+        },
+        {
+          "title": "pinned",
+          "name": "pinned",
+          "type": "boolean"
         }
       ]
     }

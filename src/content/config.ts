@@ -29,6 +29,8 @@ const postsCollection = defineCollection({
 		lang: z.string().optional().default(""),
 		/** The license of the post. Must defined at `licenseConfig.licenses` */
 		license: z.string().optional().default(licenseConfig.defaultLicense),
+		/** Is the post pinned */
+		pinned: z.boolean().optional().default(false),
 
 		/* For internal use */
 		prevTitle: z.string().default(""),
