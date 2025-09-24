@@ -60,6 +60,11 @@
           "title": "language",
           "name": "language",
           "type": "string"
+        },
+        {
+          "title": "license",
+          "name": "license",
+          "type": "string"
         }
       ]
     }

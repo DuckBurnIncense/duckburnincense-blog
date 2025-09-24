@@ -10,13 +10,18 @@ interface Props {
 	slug: string;
 	pubDate: Date;
 	class: string;
+    licenseName?: string;
 }
 
-const { title, pubDate } = Astro.props;
+const { title, pubDate, licenseName: originalLicenseName } = Astro.props;
 const className = Astro.props.class;
 const profileConf = profileConfig;
 const licenseConf = licenseConfig;
 const postUrl = decodeURIComponent(Astro.url.toString());
+
+let licenseNameToBeFind = originalLicenseName === undefined ? licenseConf.defaultLicense : originalLicenseName;
+const license = licenseConf.licenses.find(license => license.name.toLowerCase() == licenseNameToBeFind.toLowerCase());
+if (license === undefined) throw new Error(`Unknown license: "${originalLicenseName}" in "${title}"`);
 ---
 <div class={`relative transition overflow-hidden bg-[var(--license-block-bg)] py-5 px-6 ${className}`}>
     <div class="transition font-bold text-black/75 dark:text-white/75">
@@ -36,7 +41,7 @@ const postUrl = decodeURIComponent(Astro.url.toString());
         </div>
         <div>
             <div class="transition text-black/30 dark:text-white/30 text-sm">{i18n(I18nKey.license)}</div>
-            <a href={licenseConf.url} target="_blank" class="link text-[var(--primary)] line-clamp-2">{licenseConf.name}</a>
+            <a href={license.url} target="_blank" class="link text-[var(--primary)] line-clamp-2">{license.name}</a>
         </div>
     </div>
     <Icon name="fa6-brands:creative-commons" class="transition text-[15rem] absolute pointer-events-none right-6 top-1/2 -translate-y-1/2 text-black/5 dark:text-white/5"></Icon>

@@ -79,8 +79,33 @@ export const profileConfig: ProfileConfig = {
 
 export const licenseConfig: LicenseConfig = {
 	enable: true,
-	name: "CC BY-NC-SA 4.0",
-	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+	defaultLicense: "CC BY-NC 4.0",
+	licenses: [
+		{
+			name: "CC BY 4.0",
+			url: "https://creativecommons.org/licenses/by/4.0/",
+		},
+		{
+			name: "CC BY-NC 4.0",
+			url: "https://creativecommons.org/licenses/by-nc/4.0/",
+		},
+		{
+			name: "CC BY-NC-ND 4.0",
+			url: "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+		},
+		{
+			name: "CC BY-NC-SA 4.0",
+			url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+		},
+		{
+			name: "CC BY-ND 4.0",
+			url: "https://creativecommons.org/licenses/by-nd/4.0/",
+		},
+		{
+			name: "CC BY-SA 4.0",
+			url: "https://creativecommons.org/licenses/by-sa/4.0/",
+		},
+	]
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
