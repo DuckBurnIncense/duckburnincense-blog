@@ -37,4 +37,9 @@ export const en: Translation = {
 	[Key.license]: "License",
 
 	[Key.pinned]: "Pinned",
+
+	[Key.browserIncompatibility]: "Browser incompatibility",
+	[Key.browserIncompatibilityDescriptionLine1]: "Due to the use of newer technologies such as CSS value function oklch on this website, your browser version is too low and may not render the content correctly. Please update your browser first.",
+	[Key.browserIncompatibilityDescriptionLine2]: "At least Chrome/Edge 111, Firefox 113, Opera 97, or Safari 15.4 are required.",
+	[Key.upgradeBrowser]: "Update Browser",
 };

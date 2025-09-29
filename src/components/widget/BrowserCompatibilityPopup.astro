@@ -1,0 +1,87 @@
+---
+import { Icon } from "astro-icon/components";
+import I18nKey from "../../i18n/i18nKey";
+import { i18n } from "../../i18n/translation";
+
+---
+<script>
+if (!CSS ||
+    !CSS.supports('color', 'oklch(0 0 0)')
+) {
+  document.getElementById("browser-compatibility-popup-mask")?.classList.add('show');
+  document.getElementById("browser-compatibility-popup")?.classList.add('show');
+}
+</script>
+<style>
+#browser-compatibility-popup-mask {
+  position: fixed;
+  z-index: 980;
+
+  display: none;
+
+  background: black;
+  opacity: 0.5;
+  inset: 0;
+}
+#browser-compatibility-popup {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  z-index: 990;
+
+  display: none;
+  padding: 1.5rem;
+  width: 90%;
+
+  border-radius: 0.75rem;
+
+  background: white;
+  box-shadow: 1rem;
+  transform: translateX(-50%) translateY(-50%);
+  max-width: 28rem;
+}
+#browser-compatibility-popup-mask.show,
+#browser-compatibility-popup.show {
+  display: block;
+}
+.browser-compatibility-popup-title {
+  margin-bottom: 1rem;
+
+  color: red;
+  font-size: 1.5rem;
+}
+.browser-compatibility-popup-title-icon {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.browser-compatibility-popup-description,
+.browser-compatibility-popup-description * {
+  color: black;
+}
+.browser-compatibility-popup-title::selection,
+.browser-compatibility-popup-description::selection,
+.browser-compatibility-popup-description *::selection {
+  background-color: rgba(81, 81, 240, 0.5);
+}
+.browser-compatibility-popup-upgrade-link {
+  color: blue !important;
+  text-decoration: underline;
+}
+</style>
+<div id="browser-compatibility-popup-mask"></div>
+<div id="browser-compatibility-popup">
+    <h3 class="browser-compatibility-popup-title">
+      <Icon name="material-symbols:warning-rounded" class="browser-compatibility-popup-title-icon"></Icon>
+      {i18n(I18nKey.browserIncompatibility)}
+    </h3>
+    <p class="browser-compatibility-popup-description">
+      {i18n(I18nKey.browserIncompatibilityDescriptionLine1)}
+      <br>
+      {i18n(I18nKey.browserIncompatibilityDescriptionLine2)}
+      <br>
+      <a class="browser-compatibility-popup-upgrade-link" rel="external" href="https://browser-update.org/update-browser.html">
+        {i18n(I18nKey.upgradeBrowser)}
+      </a>
+    </p>
+  </div>
+</div>

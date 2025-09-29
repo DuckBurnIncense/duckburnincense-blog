@@ -34,6 +34,11 @@ enum I18nKey {
 	license = "license",
 
 	pinned = "pinned",
+
+	browserIncompatibility = "browserIncompatibility",
+	browserIncompatibilityDescriptionLine1 = "browserIncompatibilityDescriptionLine1",
+	browserIncompatibilityDescriptionLine2 = "browserIncompatibilityDescriptionLine2",
+	upgradeBrowser = "upgradeBrowser",
 }
 
 export default I18nKey;

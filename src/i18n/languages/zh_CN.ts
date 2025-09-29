@@ -37,4 +37,9 @@ export const zh_CN: Translation = {
 	[Key.license]: "许可协议",
 
 	[Key.pinned]: "置顶",
+
+	[Key.browserIncompatibility]: "浏览器不兼容",
+	[Key.browserIncompatibilityDescriptionLine1]: "由于本站使用了较新的技术（如 CSS 值函数 oklch），您的浏览器版本过低，可能无法正确渲染本站内容。请先更新您的浏览器。",
+	[Key.browserIncompatibilityDescriptionLine2]: "至少需要 Chrome/Edge 111，Firefox 113，Opera 97，或 Safari 15.4。",
+	[Key.upgradeBrowser]: "更新浏览器",
 };

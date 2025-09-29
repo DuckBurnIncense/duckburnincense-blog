@@ -19,6 +19,7 @@ import { defaultFavicons } from "../constants/icon";
 import type { Favicon } from "../types/config";
 import { pathsEqual, url } from "../utils/url-utils";
 import "katex/dist/katex.css";
+import BrowserCompatibilityPopup from "@components/widget/BrowserCompatibilityPopup.astro";
 
 interface Props {
 	title?: string;
@@ -151,6 +152,8 @@ const bannerOffset =
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
 		  data-overlayscrollbars-initialize
 	>
+		<BrowserCompatibilityPopup></BrowserCompatibilityPopup>
+
 		<ConfigCarrier></ConfigCarrier>
 		<slot />
 
