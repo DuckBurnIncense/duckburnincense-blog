@@ -1,0 +1,28 @@
+---
+
+interface Props {
+	url: string,
+  avatarUrl: string,
+  title: string,
+  description: string,
+}
+const { 
+  url,
+  avatarUrl,
+  title,
+  description,
+} = Astro.props;
+
+---
+<a href={url} target="_blank"
+class="group flex flex-col gap-1 p-4 rounded-lg border border-[var(--btn-regular-bg)]
+       transition-all duration-150 ease-in-out
+       hover:bg-[var(--btn-regular-bg-hover)]
+       active:scale-98 active:bg-[var(--btn-regular-bg-active)]
+       dark:hover:bg-white/5">
+  <div class="flex items-center gap-2">
+      <img src={avatarUrl} loading="lazy" class="w-5 h-5 rounded">
+      <div class="group-hover:text-[var(--btn-content)] font-bold text-black dark:text-white">{title}</div>
+  </div>
+  <div class="text-sm text-black/50 dark:text-white/50">{description}</div>
+</a>

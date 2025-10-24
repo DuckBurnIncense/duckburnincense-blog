@@ -39,6 +39,8 @@ enum I18nKey {
 	browserIncompatibilityDescriptionLine1 = "browserIncompatibilityDescriptionLine1",
 	browserIncompatibilityDescriptionLine2 = "browserIncompatibilityDescriptionLine2",
 	upgradeBrowser = "upgradeBrowser",
+
+	friendshipLinks = "friendshipLinks",
 }
 
 export default I18nKey;
